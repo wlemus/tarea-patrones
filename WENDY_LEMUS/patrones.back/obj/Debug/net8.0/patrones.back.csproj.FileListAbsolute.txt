@@ -1,0 +1,11 @@
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\bin\Debug\net8.0\patrones.back.deps.json
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\bin\Debug\net8.0\patrones.back.dll
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\bin\Debug\net8.0\patrones.back.pdb
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\obj\Debug\net8.0\patrones.back.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\obj\Debug\net8.0\patrones.back.AssemblyInfoInputs.cache
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\obj\Debug\net8.0\patrones.back.AssemblyInfo.cs
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\obj\Debug\net8.0\patrones.back.csproj.CoreCompileInputs.cache
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\obj\Debug\net8.0\patrones.back.dll
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\obj\Debug\net8.0\refint\patrones.back.dll
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\obj\Debug\net8.0\patrones.back.pdb
+C:\Users\W\source\repos\TrabajoPatronesDisenioUsabana\patrones.back\obj\Debug\net8.0\ref\patrones.back.dll
