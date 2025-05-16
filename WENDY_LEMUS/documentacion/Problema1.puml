@@ -1,0 +1,65 @@
+@startuml
+
+interface IBuilder {
+    +Reiniciar()
+    +SetTipoMotor(AutoTiporMotor)
+    +SetTransmision(AutoTransmision)
+    +SetColor(String)
+    +SetLlantas(int)
+    +SetSistemaSonido(String)
+    +SetInteriores(String[])
+    +SetTechoSolar(bool)
+    +SetGPS(bool)
+}
+
+class AutomovilBuilder {
+  -auto: Automovil
+    +Reiniciar()
+    +SetTipoMotor(AutoTiporMotor)
+    +SetTransmision(AutoTransmision)
+    +SetColor(String)
+    +SetLlantas(int)
+    +SetSistemaSonido(String)
+    +SetInteriores(String[])
+    +SetTechoSolar(bool)
+    +SetGPS(bool)
+    +GetAutomovil():Auto
+}
+
+enum AutoTransmision {
+    automatico
+    mecanico
+}
+
+enum AutoTiporMotor {
+    GASOLINA
+    DIESEL
+    GAS
+    HIBRIDO
+    ELECRICO
+}
+
+class Automovil {
+    +tipoMotor: AutoTiporMotor
+    +tipoTransmision: AutoTransmision
+    +color: String
+    +llantas:int,
+    +sistemaSonido: String,
+    +interiores: String[],
+    +techoSolar:bool,
+    +sistemaGPS:bool
+    
+}
+
+class Director {
+    +ConstruirAutoFamiliar(AutoBuilder)
+    +ConstruirAutoDeportivo(AutoBuilder)
+    +ConstruirAutoCompacto(AutoBuilder)
+}
+
+
+AutomovilBuilder ..|> IBuilder
+AutomovilBuilder -->  Automovil
+Director --> AutomovilBuilder
+
+@enduml
