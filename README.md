@@ -157,9 +157,6 @@ Notification <|-- WarningNotification
 
 ## Problema 3: Gestión de Mensajes en Chat Grupal
 
-### Tipo de patrón
-Pendiente de determinar
-
 ### Escenario
 Estás desarrollando una aplicación de chat grupal. Los usuarios pueden enviarse mensajes entre sí dentro de una sala de chat. Sin embargo, gestionar las interacciones directas entre cada usuario haría que cada uno deba conocer y comunicarse con todos los demás, lo que resulta en una alta dependencia entre objetos.
 
@@ -174,4 +171,103 @@ Sin un mediador, cada usuario tendría que mantener referencias directas a todos
 ---
 
 ### Solución
-Pendiente de desarrollar.
+
+# 🧩 Mediator Pattern - Chat Grupal
+
+Este proyecto demuestra la implementación del patrón de diseño **Mediator** en una aplicación de consola en C#. 
+Permite gestionar la comunicación entre usuarios sin acoplamientos directos.
+
+## 🎯 Objetivo
+
+Desacoplar la comunicación entre múltiples usuarios dentro de una sala de chat, 
+centralizando la lógica de interacción a través de un objeto mediador (`SalaChat`).
+
+### Tipo de patrón
+Comportamiento
+
+### Patrón aplicado
+Mediator
+
+
+## 📂 Estructura del Código
+
+```
+patrones.back/
+│── patrones.back.Application/       # Lógica de aplicación (ChatService, flujo principal)
+│── patrones.back.Entities/           # Entidades del dominio (Usuario)
+│── patrones.back.Interfaces/    # Contratos del mediador (IMediador)
+│── patrones.back.Mediator/             # Implementación concreta del mediador (SalaChat)
+
+patrones.test/
+│── patrones.test/Program       # Punto de entrada de la aplicación
+```
+- `Program.cs`: ejecuta el método `EjecutarChat()` desde `ChatService` para simular la conversación.
+
+
+## 📦 Resultado esperado
+
+Cuando un usuario envía un mensaje, todos los demás lo reciben mediante la clase `SalaChat`.
+
+## ▶️ Cómo ejecutar
+
+1. Clona el repositorio
+2. Abre el proyecto en Visual Studio / VS Code
+3. Compila y ejecuta el proyecto desde `Program.cs`
+
+
+### Diagrama de clases (PlantUML)
+
+![Diagrama de clases](documentacion/3_Diagrama.png)
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+
+' Interfaces
+interface IMediador {
+    +Enviar(mensaje: string, emisor: Usuario)
+    +Registrar(usuario: Usuario)
+}
+
+' Entidades principales
+class Usuario {
+    -nombre: string
+    -sala: IMediador
+    +Enviar(mensaje: string)
+    +Recibir(mensaje: string, emisor: string)
+    +SetSala(sala: IMediador)
+}
+
+class SalaChat {
+    -usuarios: List<Usuario>
+    +Registrar(usuario: Usuario)
+    +Enviar(mensaje: string, emisor: Usuario)
+}
+
+' Clase de aplicación
+class ChatService {
+    +EjecutarChat()
+}
+
+' Relaciones
+Usuario --> IMediador : usa
+IMediador <|.. SalaChat : implementa
+SalaChat --> Usuario : registra
+ChatService --> SalaChat : instancia
+ChatService --> Usuario : instancia
+
+' Notas explicativas
+note right of Usuario
+  Cada usuario conoce solo al mediador
+end note
+
+note bottom of SalaChat
+  La sala centraliza la comunicación
+end note
+
+note right of ChatService
+  Orquesta el chat y registra usuarios
+end note
+
+@enduml
+
+```

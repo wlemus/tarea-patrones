@@ -1,0 +1,50 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' Interfaces
+interface IMediador {
+    +Enviar(mensaje: string, emisor: Usuario)
+    +Registrar(usuario: Usuario)
+}
+
+' Entidades principales
+class Usuario {
+    -nombre: string
+    -sala: IMediador
+    +Enviar(mensaje: string)
+    +Recibir(mensaje: string, emisor: string)
+    +SetSala(sala: IMediador)
+}
+
+class SalaChat {
+    -usuarios: List<Usuario>
+    +Registrar(usuario: Usuario)
+    +Enviar(mensaje: string, emisor: Usuario)
+}
+
+' Clase de aplicación
+class ChatService {
+    +EjecutarChat()
+}
+
+' Relaciones
+Usuario --> IMediador : usa
+IMediador <|.. SalaChat : implementa
+SalaChat --> Usuario : registra
+ChatService --> SalaChat : instancia
+ChatService --> Usuario : instancia
+
+' Notas explicativas
+note right of Usuario
+  Cada usuario conoce solo al mediador
+end note
+
+note bottom of SalaChat
+  La sala centraliza la comunicación
+end note
+
+note right of ChatService
+  Orquesta el chat y registra usuarios
+end note
+
+@enduml
