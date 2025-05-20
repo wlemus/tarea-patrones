@@ -1,5 +1,5 @@
-﻿using patrones.back._1_Builder;
-using patrones.back._2_Bridge;
+﻿using Bridge;
+using patrones.back._1_Builder;
 
 namespace patrones.test
 {
@@ -39,20 +39,19 @@ namespace patrones.test
 
             //****************************************2. Bridge****************************************
             // Crear las plataformas
-            IPlataforma plataformaWeb = new PlataformaWeb();
-            IPlataforma plataformaMovil = new PlataformaMovil();
-            IPlataforma plataformaEscritorio = new PlataformaEscritorio();
+            Notification webMessageNotification = new MessageNotification(new WebSender());
+            webMessageNotification.Notify("Esta es una notificacion");
 
-            // Crear notificaciones para cada plataforma
-            var notificacionWeb = new Notificacion(plataformaWeb);
-            var notificacionMovil = new Notificacion(plataformaMovil);
-            var notificacionEscritorio = new Notificacion(plataformaEscritorio);
+            var smsSender = new SmsSender();
+            smsSender.SetCompanies(["Claro", "Movistar", "At&t"]);
+            Notification smsAlertNotification = new AlertNotification(smsSender);
+            smsAlertNotification.Notify("Esta es una notificacion");
 
-            // Enviar mensajes
-            notificacionWeb.Mensaje("Bienvenido al portal.");
-            notificacionMovil.Alerta("¡Batería baja!");
-            notificacionEscritorio.Confirmacion("Actualización completada.");
-            notificacionWeb.Advertencia("Estás usando una versión antigua del navegador.");
+            Notification webWarningNotification = new WarningNotification(new WebSender());
+            webWarningNotification.Notify("Esta es una notificacion");
+
+            Notification webConfirmationNotification = new ConfirmationNotification(new WebSender());
+            webConfirmationNotification.Notify("Esta es una notificacion");
         }
     }
 }
