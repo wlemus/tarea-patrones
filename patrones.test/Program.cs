@@ -1,5 +1,6 @@
 ﻿using Bridge;
 using patrones.back._1_Builder;
+using patrones.back._3_Mediator.Application;
 
 namespace patrones.test
 {
@@ -52,6 +53,13 @@ namespace patrones.test
 
             Notification webConfirmationNotification = new ConfirmationNotification(new WebSender());
             webConfirmationNotification.Notify("Esta es una notificacion");
+
+
+
+            //****************************************3. Mediator ****************************************
+
+            var chat = new ChatService();
+            chat.EjecutarChat();
         }
     }
 }
