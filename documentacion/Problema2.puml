@@ -1,31 +1,37 @@
 @startuml
 
-interface IPlataforma{
- +EnviarMensaje(String)
+title Bridge Class Diagram
+
+interface INotificationSender{
+  +void Send(string message)
+}
+abstract Notification{
+  -INotificationSender
+  +Notify(string message)
 }
 
-class Notificacion {
--plataforma:IPlataforma,
-+Alerta(String),
-+Advertencia(String),
-+Mensaje(String),
-+Confirmacion(String)
+class WebSender
+class SMSSender{
+-List:string _telephoneCompanies
++SetCompanies(List:string telephoneCompanies)
 }
 
-class PlataformaEscritorio {
- +EnviarMensaje(String)
- }
+class MessageNotification {
+ +void saveDB(string message)
+}
+class AlertNotification 
+class WarningNotification 
 
-class PlataformaMovil {
- +EnviarMensaje(String)
- }
- 
- class PlataformaWeb {
-  +EnviarMensaje(String)
- }
- 
-PlataformaEscritorio ..|> IPlataforma
-PlataformaMovil --|>  IPlataforma
-PlataformaWeb --|> IPlataforma
-Notificacion *--> IPlataforma
+
+
+Notification *-- INotificationSender
+
+WebSender ..> INotificationSender
+SMSSender ..> INotificationSender 
+Notification <|-- MessageNotification
+Notification <|-- AlertNotification
+Notification <|-- WarningNotification
+
+
+
 @enduml

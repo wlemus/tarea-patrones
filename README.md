@@ -25,69 +25,39 @@ Creacional
 Builder
 
 ### Diagrama de clases (PlantUML)
-![Diagrama de clases](documentacion/1_Diagrama.png)
+![Diagrama de clases](documentacion/2_Diagrama.png)
 ```plantuml
 @startuml
 
-interface Builder {
-    +Reiniciar()
-    +SetTipoMotor(AutoTiporMotor)
-    +SetTransmision(AutoTransmision)
-    +SetColor(String)
-    +SetLlantas(int)
-    +SetSistemaSonido(String)
-    +SetInteriores(String[])
-    +SetTechoSolar(bool)
-    +SetGPS(bool)
+title Bridge Class Diagram
+
+interface INotificationSender{
+  +void Send(string message)
+}
+abstract Notification{
+  -INotificationSender
+  +Notify(string message)
 }
 
-class AutomovilBuilder {
-  -auto: Automovil
-    +Reiniciar()
-    +SetTipoMotor(AutoTiporMotor)
-    +SetTransmision(AutoTransmision)
-    +SetColor(String)
-    +SetLlantas(int)
-    +SetSistemaSonido(String)
-    +SetInteriores(String[])
-    +SetTechoSolar(bool)
-    +SetGPS(bool)
-    +GetAutomovil():Auto
+class WebSender
+class SMSSender{
+-List:string _telephoneCompanies
++SetCompanies(List:string telephoneCompanies)
 }
 
-enum AutoTransmision {
-    automatico
-    mecanico
+class MessageNotification {
+ +void saveDB(string message)
 }
+class AlertNotification 
+class WarningNotification 
 
-enum AutoTiporMotor {
-    GASOLINA
-    DIESEL
-    GAS
-    HIBRIDO
-    ELECRICO
-}
+Notification *-- INotificationSender
 
-class Automovil {
-    +tipoMotor: AutoTiporMotor
-    +tipoTransmision: AutoTransmision
-    +color: String
-    +llantas:int
-    +sistemaSonido: String
-    +interiores: String[]
-    +techoSolar:bool
-    +sistemaGPS:bool
-}
-
-class Director {
-    +ConstruirAutoFamiliar(AutoBuilder)
-    +ConstruirAutoDeportivo(AutoBuilder)
-    +ConstruirAutoCompacto(AutoBuilder)
-}
-
-AutomovilBuilder ..|> Builder
-AutomovilBuilder --> Automovil
-Director --> AutomovilBuilder
+WebSender ..> INotificationSender
+SMSSender ..> INotificationSender 
+Notification <|-- MessageNotification
+Notification <|-- AlertNotification
+Notification <|-- WarningNotification
 
 @enduml
 ```
