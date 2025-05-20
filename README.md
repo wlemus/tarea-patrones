@@ -2,14 +2,8 @@
 
 ---
 
-<<<<<<< HEAD
 ## Grupo No. 5
 
-
----
-
-=======
->>>>>>> 86227ed (change project structure)
 ## Problema 1: Personalización de Automóviles
 
 ### Escenario
@@ -123,9 +117,7 @@ Estructural
 Bridge
 
 ### Diagrama de clases (PlantUML)
-<<<<<<< HEAD
 
-=======
 ![Diagrama de clases](documentacion/2_Diagrama.png)
 ```plantuml
 @startuml
@@ -160,8 +152,6 @@ PlataformaWeb --|> IPlataforma
 Notificacion *--> IPlataforma
 @enduml
 
-```
->>>>>>> 86227ed (change project structure)
 
 ## Problema 3: Gestión de Mensajes en Chat Grupal
 
@@ -183,8 +173,3 @@ Sin un mediador, cada usuario tendría que mantener referencias directas a todos
 
 ### Solución
 Pendiente de desarrollar.
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 86227ed (change project structure)
