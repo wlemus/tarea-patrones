@@ -121,7 +121,7 @@ PlataformaMovil --|>  IPlataforma
 PlataformaWeb --|> IPlataforma
 Notificacion *--> IPlataforma
 @enduml
-
+```
 
 ## Problema 3: Gestión de Mensajes en Chat Grupal
 
