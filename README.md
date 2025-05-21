@@ -18,13 +18,17 @@ Crear un objeto Automóvil con múltiples configuraciones puede llevar a constru
 - Flexibilidad: Poder omitir atributos opcionales sin necesidad de crear subclases o múltiples constructores.  
 - Separación de construcción y representación: Separar la lógica de construcción del objeto en sí, facilitando modificaciones futuras.
 
-### Tipo de patrón
+---
+
+### Solución
+
+#### Tipo de patrón
 Creacional
 
-### Patrón aplicado
+#### Patrón aplicado
 Builder
 
-### Diagrama de clases (PlantUML)
+#### Diagrama de clases (PlantUML)
 ![Diagrama de clases](documentacion/1_Diagrama.png)
 ```plantuml
   @startuml
@@ -110,13 +114,17 @@ Esto lleva rápidamente a una explosión combinatoria de subclases difíciles de
 - Reducción de clases: Evitar la multiplicación de clases para cada combinación.  
 - Flexibilidad en tiempo de ejecución: Poder cambiar la plataforma dinámicamente si es necesario.
 
-### Tipo de patrón
+---
+
+### Solución
+
+#### Tipo de patrón
 Estructural
 
-### Patrón aplicado
+#### Patrón aplicado
 Bridge
 
-### Diagrama de clases (PlantUML)
+#### Diagrama de clases (PlantUML)
 
 ![Diagrama de clases](documentacion/2_Diagrama.png)
 ```plantuml
