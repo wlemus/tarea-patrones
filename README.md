@@ -3,6 +3,12 @@
 ---
 
 ## Grupo No. 5
+  * Joaquin Andres Beltran Gomez
+  * Juan Camilo Montoya Delgado
+  * Mauro Ferney Martinez Quiroga
+  * Miguel Angel Ballestero Ahumada
+  * Moises Alberto Castro Gomez
+  * Wendy Lémus Martínez
 
 ## Problema 1: Personalización de Automóviles
 
@@ -253,7 +259,7 @@ end note
 @enduml
 
 ```
-## 📂 Estructura del Código
+## Estructura del Código
 
 ```
 patrones.back/
@@ -268,11 +274,11 @@ patrones.test/
 - `Program.cs`: ejecuta el método `EjecutarChat()` desde `ChatService` para simular la conversación.
 
 
-## 📦 Resultado esperado
+##Resultado esperado
 
 Cuando un usuario envía un mensaje, todos los demás lo reciben mediante la clase `SalaChat`.
 
-## ▶️ Cómo ejecutar
+## Cómo ejecutar
 
 1. Clona el repositorio
 2. Abre el proyecto en Visual Studio / VS Code
