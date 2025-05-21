@@ -172,20 +172,20 @@ Sin un mediador, cada usuario tendría que mantener referencias directas a todos
 
 ### Solución
 
-# 🧩 Mediator Pattern - Chat Grupal
+#### Mediator Pattern - Chat Grupal
 
 Este proyecto demuestra la implementación del patrón de diseño **Mediator** en una aplicación de consola en C#. 
 Permite gestionar la comunicación entre usuarios sin acoplamientos directos.
 
-## 🎯 Objetivo
+##### Objetivo
 
 Desacoplar la comunicación entre múltiples usuarios dentro de una sala de chat, 
 centralizando la lógica de interacción a través de un objeto mediador (`SalaChat`).
 
-### Tipo de patrón
+#### Tipo de patrón
 Comportamiento
 
-### Patrón aplicado
+#### Patrón aplicado
 Mediator
 
 
