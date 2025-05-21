@@ -189,32 +189,6 @@ Comportamiento
 Mediator
 
 
-## 📂 Estructura del Código
-
-```
-patrones.back/
-│── patrones.back.Application/       # Lógica de aplicación (ChatService, flujo principal)
-│── patrones.back.Entities/           # Entidades del dominio (Usuario)
-│── patrones.back.Interfaces/    # Contratos del mediador (IMediador)
-│── patrones.back.Mediator/             # Implementación concreta del mediador (SalaChat)
-
-patrones.test/
-│── patrones.test/Program       # Punto de entrada de la aplicación
-```
-- `Program.cs`: ejecuta el método `EjecutarChat()` desde `ChatService` para simular la conversación.
-
-
-## 📦 Resultado esperado
-
-Cuando un usuario envía un mensaje, todos los demás lo reciben mediante la clase `SalaChat`.
-
-## ▶️ Cómo ejecutar
-
-1. Clona el repositorio
-2. Abre el proyecto en Visual Studio / VS Code
-3. Compila y ejecuta el proyecto desde `Program.cs`
-
-
 ### Diagrama de clases (PlantUML)
 
 ![Diagrama de clases](documentacion/3_Diagrama.png)
@@ -271,3 +245,29 @@ end note
 @enduml
 
 ```
+## 📂 Estructura del Código
+
+```
+patrones.back/
+│── patrones.back.Application/       # Lógica de aplicación (ChatService, flujo principal)
+│── patrones.back.Entities/           # Entidades del dominio (Usuario)
+│── patrones.back.Interfaces/    # Contratos del mediador (IMediador)
+│── patrones.back.Mediator/             # Implementación concreta del mediador (SalaChat)
+
+patrones.test/
+│── patrones.test/Program       # Punto de entrada de la aplicación
+```
+- `Program.cs`: ejecuta el método `EjecutarChat()` desde `ChatService` para simular la conversación.
+
+
+## 📦 Resultado esperado
+
+Cuando un usuario envía un mensaje, todos los demás lo reciben mediante la clase `SalaChat`.
+
+## ▶️ Cómo ejecutar
+
+1. Clona el repositorio
+2. Abre el proyecto en Visual Studio / VS Code
+3. Compila y ejecuta el proyecto desde `Program.cs`
+
+
